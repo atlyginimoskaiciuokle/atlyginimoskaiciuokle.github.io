@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="xkupBJD4mlE9usbClUPyfZeHkD4EeqNdD68vpMqcj9s" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlyginimo Skaičiuoklė | Greitas ir Tikslus Algos Skaičiavimas</title>
-    <meta name="description" content="Patikima atlyginimo skaiciuokle 2025 m. Apskaičiuokite algą į rankas arba ant popieriaus. Mūsų algos skaiciuokle padeda nustatyti tikslią darbo vietos kainą ir visus mokesčius.">
-    <meta name="keywords" content="atlyginimo skaiciuokle, algos skaiciuokle, atlyginimas, alga, mokesčiai, sodra, vmi, darbo vietos kaina, 2025">
+    <title>Atlyginimo Skaičiuoklė 2026 | Greitas ir Tikslus Algos Skaičiavimas</title>
+    <meta name="description" content="Patikima atlyginimo skaiciuokle 2026 m. Apskaičiuokite algą į rankas, ant popieriaus ar darbo vietos kainą. Atsižvelgiama į NPD pajamas, Sodros mokestį (VSD) ir GPM.">
+    <meta name="keywords" content="atlyginimo skaiciuokle, algos skaiciuokle, atlyginimas 2026, alga, mokesčiai, sodra, vmi, darbo vietos kaina, npd">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://atlyginimo-skaiciuokle.lt/">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,10 +22,10 @@
             background-color: #10B981;
         }
         /* Custom number input styling */
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -40,7 +40,7 @@
         }
         .tooltip .tooltiptext {
             visibility: hidden;
-            width: 220px;
+            width: 240px;
             background-color: #1F2937;
             color: #fff;
             text-align: center;
@@ -50,7 +50,7 @@
             z-index: 1;
             bottom: 125%;
             left: 50%;
-            margin-left: -110px;
+            margin-left: -120px;
             opacity: 0;
             transition: opacity 0.3s;
             font-size: 12px;
@@ -68,18 +68,6 @@
             border-width: 5px;
             border-style: solid;
             border-color: #1F2937 transparent transparent transparent;
-        }
-        .result-highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .employer-highlight {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-        .employee-highlight {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
         }
         .tabs-active {
             background-color: #3B82F6;
@@ -134,7 +122,6 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-
     <!-- Header -->
     <header class="bg-white shadow-sm border-b border-gray-200">
         <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -144,7 +131,7 @@
                 </div>
                 <h1 class="text-xl font-bold text-gray-900 tracking-tight">Atlyginimo Skaičiuoklė</h1>
             </div>
-            <div class="flex items-center space-x-4">
+            <div class="hidden md:flex items-center space-x-4">
                 <div class="text-sm text-gray-500 font-medium">Lietuva 🇱🇹</div>
                 <a href="/minimali-alga.index.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors">Minimali alga</a>
                 <a href="/istoriniai-duomenys-npd.index.html" class="text-sm text-blue-600 hover:text-blue-800 font-medium transition-colors">NPD duomenys</a>
@@ -154,16 +141,16 @@
 
     <!-- Main Content -->
     <main class="flex-grow max-w-6xl mx-auto w-full px-4 py-8 fade-in">
-        
+       
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
+           
             <!-- Left Panel - Inputs -->
             <div class="lg:col-span-1 space-y-6">
-                
+               
                 <!-- Card - Main Inputs -->
                 <div class="bg-white rounded-xl card-shadow p-6">
                     <h2 class="text-lg font-semibold mb-4 text-gray-700 border-b pb-2">Duomenų įvedimas</h2>
-                    
+                   
                     <!-- Calculation Type Tabs -->
                     <div class="flex bg-gray-100 p-1 rounded-xl mb-6">
                         <button id="btnGross" class="flex-1 py-2 text-sm font-medium rounded-lg shadow-sm tabs-active tab-button transition-all duration-200" onclick="setMode('gross')">Ant popieriaus</button>
@@ -180,19 +167,19 @@
                                 <span class="text-gray-500 font-medium">€</span>
                             </div>
                         </div>
-                        <p class="mt-2 text-xs text-gray-500">MMA (2025 m.): 1038 €</p>
+                        <p class="mt-2 text-xs text-gray-500" id="mmaText">MMA (2026 m.): 1150 €</p>
                     </div>
 
                     <!-- Advanced Settings -->
                     <div class="space-y-4">
-                        
+                       
                         <!-- NPD Settings -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                                 Neapmokestinamas pajamų dydis (NPD)
                                 <span class="tooltip ml-1">
                                     <i class="fas fa-info-circle text-gray-400"></i>
-                                    <span class="tooltiptext">NPD taikomas tik tuo atveju, jeigu darbuotojas darbdaviui pateikia prašymą jį taikyti.</span>
+                                    <span class="tooltiptext">NPD taikomas tik tuo atveju, jeigu darbuotojas darbdaviui pateikia prašymą jį taikyti. Dydis priklauso nuo metų.</span>
                                 </span>
                             </label>
                             <select id="npdSelect" class="block w-full py-2.5 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm select-field">
@@ -209,7 +196,7 @@
                                 Papildomas pensijos kaupimas
                                 <span class="tooltip ml-1">
                                     <i class="fas fa-info-circle text-gray-400"></i>
-                                    <span class="tooltiptext">Darbuotojo kaupimas papildomam pensijų draudimui</span>
+                                    <span class="tooltiptext">Darbuotojo kaupimas papildomam pensijų draudimui (II pakopa)</span>
                                 </span>
                             </label>
                             <select id="pensionSelect" class="block w-full py-2.5 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm select-field">
@@ -259,12 +246,12 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Metai</label>
                             <select id="yearSelect" class="block w-full py-2.5 px-3 border border-gray-300 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm select-field">
+                                <option value="2026" selected>2026</option>
                                 <option value="2025">2025</option>
                                 <option value="2024">2024</option>
                                 <option value="2023">2023</option>
                             </select>
                         </div>
-
                     </div>
 
                     <!-- Action Button -->
@@ -278,15 +265,14 @@
                 <div class="bg-blue-50 rounded-xl p-4 border border-blue-100 text-sm text-blue-800 card-shadow">
                     <div class="flex items-start space-x-2">
                         <i class="fa-solid fa-circle-info mt-1"></i>
-                        <p>Patikima atlyginimo skaiciuokle 2025 m. Apskaičiuokite algą į rankas arba ant popieriaus. Mūsų algos skaiciuokle padeda nustatyti tikslią darbo vietos kainą ir visus mokesčius.</p>
+                        <p><strong>2026 m. Atlyginimai:</strong> MMA padidėjo iki 1150 €. NPD dydis taip pat padidėjo. Mokesčių tarifai (GPM 20%, PSD 6.98%, VSD 12.52%) išlieka tokie pat kaip ir 2025 m.</p>
                     </div>
                 </div>
-
             </div>
 
             <!-- Right Panel - Results -->
             <div class="lg:col-span-2 space-y-6">
-                
+               
                 <!-- Main Result Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white p-5 rounded-xl card-shadow result-card relative overflow-hidden group">
@@ -297,14 +283,12 @@
                             <i class="fa-solid fa-check mr-1"></i> Išmokama darbuotojui
                         </p>
                     </div>
-
                     <div class="bg-white p-5 rounded-xl card-shadow result-card relative overflow-hidden group">
                         <div class="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-gray-100 rounded-full opacity-50 blur-xl group-hover:scale-110 transition-transform"></div>
                         <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Ant Popieriaus (Bruto)</p>
                         <p id="resGross" class="text-3xl font-bold text-gray-900 mt-1">0.00 €</p>
                         <p class="text-xs text-gray-500 mt-1">Sutartyje numatytas atlygis</p>
                     </div>
-
                     <div class="bg-white p-5 rounded-xl card-shadow result-card relative overflow-hidden group">
                         <div class="absolute top-0 right-0 -mt-2 -mr-2 w-16 h-16 bg-purple-100 rounded-full opacity-50 blur-xl group-hover:scale-110 transition-transform"></div>
                         <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Darbo Vietos Kaina</p>
@@ -321,7 +305,7 @@
                         <h3 class="font-semibold text-gray-800">Mokesčių Išklotinė</h3>
                         <span class="text-xs font-mono bg-gray-200 text-gray-600 px-2 py-1 rounded">EUR</span>
                     </div>
-                    
+                   
                     <div class="divide-y divide-gray-100">
                         <!-- NPD Row -->
                         <div class="flex justify-between items-center px-6 py-3 hover:bg-gray-50 transition-colors">
@@ -426,13 +410,12 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- Additional Information -->
                 <div class="bg-white rounded-xl card-shadow p-6">
-                    <h3 class="font-semibold text-gray-800 mb-4">Mokesčių tarifai (2025 m.)</h3>
+                    <h3 class="font-semibold text-gray-800 mb-4">Mokesčių tarifai <span id="taxYearLabel">(2026 m.)</span></h3>
                     <div class="overflow-x-auto">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
@@ -472,106 +455,150 @@
                         </table>
                     </div>
                 </div>
-
             </div>
         </div>
-        
+       
         <div class="mt-8 text-center text-gray-400 text-xs">
-            <p>© 2025 . Informacinio pobūdžio.</p>
+            <p>© 2026 Atlyginimo Skaičiuoklė. Informacinio pobūdžio.</p>
         </div>
-
     </main>
 
     <script>
-        // --- Constants 2025 ---
-        const CONSTANTS = {
-            MMA: 1038,
-            NPD_BASE_1: 747,
-            NPD_LIMIT_1: 1038, // Up to this, fixed 747
-            NPD_LIMIT_2: 2387.29, // Threshold for formula change
-            NPD_FORMULA_1_FACTOR: 0.49,
-            NPD_FORMULA_2_BASE: 400,
-            NPD_FORMULA_2_SUBTRACT: 642,
-            NPD_FORMULA_2_FACTOR: 0.18,
-            NPD_DISABLED: 1127, // For 0-25% work capacity
-            NPD_PARTIAL: 1057, // For 30-55% work capacity
-            
-            RATE_GPM: 0.20,
-            RATE_PSD: 0.0698,
-            RATE_VSD: 0.1252,
-            RATE_EMPLOYER_1: 0.0177, // Group 1
-            RATE_EMPLOYER_2: 0.0217, // Group 2
-            RATE_EMPLOYER_3: 0.0277, // Group 3
-            RATE_EMPLOYER_4: 0.0347, // Group 4
+        // --- Data Configuration by Year ---
+        const YEAR_DATA = {
+            '2026': {
+                MMA: 1150,
+                NPD_BASE_1: 835, 
+                NPD_LIMIT_1: 1150, 
+                NPD_LIMIT_2: 2650, 
+                NPD_FORMULA_1_FACTOR: 0.49,
+                NPD_FORMULA_2_BASE: 460, 
+                NPD_FORMULA_2_SUBTRACT: 713, 
+                NPD_FORMULA_2_FACTOR: 0.18,
+                NPD_DISABLED: 1247, 
+                NPD_PARTIAL: 1168, 
+            },
+            '2025': {
+                MMA: 1038,
+                NPD_BASE_1: 747, 
+                NPD_LIMIT_1: 1038, 
+                NPD_LIMIT_2: 2387.29, 
+                NPD_FORMULA_1_FACTOR: 0.49,
+                NPD_FORMULA_2_BASE: 400,
+                NPD_FORMULA_2_SUBTRACT: 642,
+                NPD_FORMULA_2_FACTOR: 0.18,
+                NPD_DISABLED: 1127,
+                NPD_PARTIAL: 1057,
+            },
+            '2024': {
+                MMA: 924,
+                NPD_BASE_1: 620, 
+                NPD_LIMIT_1: 840, 
+                NPD_LIMIT_2: 1926.00, 
+                NPD_FORMULA_1_FACTOR: 0.46,
+                NPD_FORMULA_2_BASE: 300,
+                NPD_FORMULA_2_SUBTRACT: 558,
+                NPD_FORMULA_2_FACTOR: 0.18,
+                NPD_DISABLED: 930,
+                NPD_PARTIAL: 840,
+            },
+            '2023': {
+                MMA: 730,
+                NPD_BASE_1: 460,
+                NPD_LIMIT_1: 642,
+                NPD_LIMIT_2: 1678,
+                NPD_FORMULA_1_FACTOR: 0.26,
+                NPD_FORMULA_2_BASE: 0, 
+                NPD_FORMULA_2_SUBTRACT: 0,
+                NPD_FORMULA_2_FACTOR: 0.18,
+                NPD_DISABLED: 724,
+                NPD_PARTIAL: 680,
+            }
+        };
+
+        // --- Static Constants (Same across recent years) ---
+        const TAX_RATES = {
+            GPM: 0.20,
+            PSD: 0.0698,
+            VSD_EMPLOYEE: 0.1252,
+            VSD_EMPLOYER_1: 0.0177,
+            VSD_EMPLOYER_2: 0.0217,
+            VSD_EMPLOYER_3: 0.0277,
+            VSD_EMPLOYER_4: 0.0347,
         };
 
         // --- State ---
         let state = {
-            mode: 'gross', // 'gross', 'net', or 'cost'
-            amount: 0, // Changed from 1038 to 0
-            npdType: 'auto', // 'auto', '0', 'disabled', 'partial'
+            mode: 'gross', 
+            amount: 0,
+            npdType: 'auto', 
             pensionRate: 0.0,
-            contractType: 'indefinite', // 'indefinite' or 'fixed'
-            employerType: 'private', // 'private', 'state', 'municipality'
-            employerGroup: '1', // '1', '2', '3', or '4'
-            year: '2025'
+            contractType: 'indefinite', 
+            employerType: 'private', 
+            employerGroup: '1', 
+            year: '2026' 
         };
 
         // --- Core Logic ---
+        function getCurrentData() {
+            return YEAR_DATA[state.year] || YEAR_DATA['2026'];
+        }
 
         function calculateNPD(gross) {
-            if (state.npdType === '0') return 0;
-            if (state.npdType === 'disabled') return CONSTANTS.NPD_DISABLED;
-            if (state.npdType === 'partial') return CONSTANTS.NPD_PARTIAL;
+            const data = getCurrentData();
             
+            if (state.npdType === '0') return 0;
+            if (state.npdType === 'disabled') return data.NPD_DISABLED;
+            if (state.npdType === 'partial') return data.NPD_PARTIAL;
+           
             // Auto NPD calculation
             if (gross <= 0) return 0;
-
             let npd = 0;
 
-            if (gross <= CONSTANTS.NPD_LIMIT_1) {
-                // Formula: Fixed 747
-                npd = CONSTANTS.NPD_BASE_1;
-            } else if (gross <= CONSTANTS.NPD_LIMIT_2) {
-                // Formula:747 - 0.49 * (Gross - 1038)
-                npd = CONSTANTS.NPD_BASE_1 - CONSTANTS.NPD_FORMULA_1_FACTOR * (gross - CONSTANTS.NPD_LIMIT_1);
-            } else {
-                // Formula: 400 - 0.18 * (Gross - 642)
-                npd = CONSTANTS.NPD_FORMULA_2_BASE - CONSTANTS.NPD_FORMULA_2_FACTOR * (gross - CONSTANTS.NPD_FORMULA_2_SUBTRACT);
+            // Tier 1: Fixed NPD up to Limit 1 (usually MMA)
+            if (gross <= data.NPD_LIMIT_1) {
+                npd = data.NPD_BASE_1;
+            } 
+            // Tier 2: Reduction formula up to Limit 2
+            else if (gross <= data.NPD_LIMIT_2) {
+                npd = data.NPD_BASE_1 - data.NPD_FORMULA_1_FACTOR * (gross - data.NPD_LIMIT_1);
+            } 
+            // Tier 3: Minimum NPD or formula for higher incomes
+            else {
+                // Formula: Base - Factor * (Gross - Subtract)
+                let calculatedNpd = data.NPD_FORMULA_2_BASE - data.NPD_FORMULA_2_FACTOR * (gross - data.NPD_FORMULA_2_SUBTRACT);
+                npd = Math.max(0, calculatedNpd);
             }
-
-            // NPD cannot be negative or larger than gross (practically)
-            // Actually tax cannot be negative. If NPD > Gross, Tax Base is 0.
+            
             return Math.max(0, npd);
         }
 
         function getEmployerRate() {
             switch (state.employerGroup) {
-                case '1': return CONSTANTS.RATE_EMPLOYER_1;
-                case '2': return CONSTANTS.RATE_EMPLOYER_2;
-                case '3': return CONSTANTS.RATE_EMPLOYER_3;
-                case '4': return CONSTANTS.RATE_EMPLOYER_4;
-                default: return CONSTANTS.RATE_EMPLOYER_1;
+                case '1': return TAX_RATES.VSD_EMPLOYER_1;
+                case '2': return TAX_RATES.VSD_EMPLOYER_2;
+                case '3': return TAX_RATES.VSD_EMPLOYER_3;
+                case '4': return TAX_RATES.VSD_EMPLOYER_4;
+                default: return TAX_RATES.VSD_EMPLOYER_1;
             }
         }
 
         function calculateFromGross(gross) {
             const npd = calculateNPD(gross);
             const taxBaseGPM = Math.max(0, gross - npd);
-            
-            const gpm = taxBaseGPM * CONSTANTS.RATE_GPM;
-            const psd = gross * CONSTANTS.RATE_PSD;
-            const vsd = gross * CONSTANTS.RATE_VSD;
+           
+            const gpm = taxBaseGPM * TAX_RATES.GPM;
+            const psd = gross * TAX_RATES.PSD;
+            const vsd = gross * TAX_RATES.VSD_EMPLOYEE;
             const pension = gross * state.pensionRate;
-            
+           
             const totalDeductions = gpm + psd + vsd + pension;
             const net = gross - totalDeductions;
-            
+           
             const employerRate = getEmployerRate();
             const employerTax = gross * employerRate;
             const totalCost = gross + employerTax;
-            
-            // Calculate Sodra and VMI payment amounts
+           
             const sodraPayment = vsd + psd + employerTax;
             const vmiPayment = gpm;
 
@@ -592,81 +619,75 @@
         }
 
         function calculateFromNet(targetNet) {
-            // Binary search to find Gross that yields this Net
-            let low = targetNet; 
-            let high = targetNet * 2.5; // Initial estimation range
+            let low = targetNet;
+            let high = targetNet * 3; 
             let gross = low;
             let result = null;
-            
-            // Expand range if needed
+           
+            // Expand range if needed (e.g. for very high net to tax ratio)
             let iterations = 0;
-            while (calculateFromGross(high).net < targetNet && iterations < 20) {
+            while (calculateFromGross(high).net < targetNet && iterations < 50) {
                 high *= 1.5;
                 iterations++;
             }
-
+           
             // Binary search
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 60; i++) {
                 gross = (low + high) / 2;
                 result = calculateFromGross(gross);
-                
+               
                 if (Math.abs(result.net - targetNet) < 0.01) {
                     break;
                 }
-                
+               
                 if (result.net < targetNet) {
                     low = gross;
                 } else {
                     high = gross;
                 }
             }
-            
+           
             return result;
         }
 
         function calculateFromCost(targetCost) {
-            // Binary search to find Gross that yields this Cost
-            let low = targetCost * 0.8; // Initial estimation range
+            let low = targetCost * 0.7;
             let high = targetCost;
             let gross = low;
             let result = null;
-            
-            // Binary search
-            for (let i = 0; i < 50; i++) {
+           
+            for (let i = 0; i < 60; i++) {
                 gross = (low + high) / 2;
                 result = calculateFromGross(gross);
-                
+               
                 if (Math.abs(result.totalCost - targetCost) < 0.01) {
                     break;
                 }
-                
+               
                 if (result.totalCost < targetCost) {
                     low = gross;
                 } else {
                     high = gross;
                 }
             }
-            
+           
             return result;
         }
 
         // --- UI Handling ---
-
         function setMode(newMode) {
             state.mode = newMode;
-            
+           
             const btnGross = document.getElementById('btnGross');
             const btnNet = document.getElementById('btnNet');
             const btnCost = document.getElementById('btnCost');
             const label = document.getElementById('amountLabel');
-
-            // Reset all buttons
+            
             [btnGross, btnNet, btnCost].forEach(btn => {
                 btn.classList.remove('tabs-active');
                 btn.classList.add('tabs-inactive');
             });
-            
-            // Activate selected button
+           
             if (newMode === 'gross') {
                 btnGross.classList.remove('tabs-inactive');
                 btnGross.classList.add('tabs-active');
@@ -680,8 +701,18 @@
                 btnCost.classList.add('tabs-active');
                 label.textContent = "Darbo vietos kaina";
             }
-            
+           
             calculate();
+        }
+
+        function updateUIText() {
+            const data = getCurrentData();
+            // Update MMA text
+            const mmaText = document.getElementById('mmaText');
+            const taxYearLabel = document.getElementById('taxYearLabel');
+            
+            mmaText.textContent = `MMA (${state.year} m.): ${data.MMA} €`;
+            taxYearLabel.textContent = `(${state.year} m.)`;
         }
 
         function formatCurrency(num) {
@@ -696,13 +727,15 @@
             // Get inputs
             const amountStr = document.getElementById('salaryInput').value;
             const amount = parseFloat(amountStr) || 0;
-            
+           
             state.npdType = document.getElementById('npdSelect').value;
             state.pensionRate = parseFloat(document.getElementById('pensionSelect').value) / 100;
             state.contractType = document.getElementById('contractType').value;
             state.employerType = document.getElementById('employerType').value;
             state.employerGroup = document.getElementById('employerGroup').value;
             state.year = document.getElementById('yearSelect').value;
+
+            updateUIText();
 
             let data;
             if (state.mode === 'gross') {
@@ -718,11 +751,11 @@
             document.getElementById('resNet').textContent = formatCurrency(data.net);
             document.getElementById('resTotalCost').textContent = formatCurrency(data.totalCost);
             document.getElementById('resNPD').textContent = formatCurrency(data.npd);
-            
+           
             document.getElementById('resGPM').textContent = "- " + formatCurrency(data.gpm);
             document.getElementById('resPSD').textContent = "- " + formatCurrency(data.psd);
             document.getElementById('resVSD').textContent = "- " + formatCurrency(data.vsd);
-            
+           
             // Pension Row Visibility
             const pensionRow = document.getElementById('rowPension');
             if (data.pension > 0) {
@@ -731,10 +764,10 @@
             } else {
                 pensionRow.classList.add('hidden');
             }
-
+            
             document.getElementById('resEmployerTax').textContent = formatCurrency(data.employerTax);
             document.getElementById('employerRateText').textContent = formatPercentage(data.employerRate) + " (ant viršaus)";
-            
+           
             // Payment information
             document.getElementById('resSodra').textContent = formatCurrency(data.sodraPayment);
             document.getElementById('resVMI').textContent = formatCurrency(data.vmiPayment);
@@ -750,14 +783,10 @@
             document.getElementById('employerType').addEventListener('change', calculate);
             document.getElementById('employerGroup').addEventListener('change', calculate);
             document.getElementById('yearSelect').addEventListener('change', calculate);
-            
+           
             // Initial Calc
             calculate();
         });
-
     </script>
 </body>
-
 </html>
-
-
